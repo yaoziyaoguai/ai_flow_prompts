@@ -1,5 +1,8 @@
 # 使用指南
 
+> 只想找场景对应的模板？→ **[START_HERE.md](../START_HERE.md)**
+> 只想复制命令？→ **[COMMANDS.md](../COMMANDS.md)**
+
 ## 概述
 
 本仓库的模板按两个维度组织：

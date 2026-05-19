@@ -5,6 +5,7 @@ AI Workflow Prompt Library —— 让 ChatGPT / Claude Code / Codex 更稳定执
 > 不知道用哪个模板？→ **[START_HERE.md](START_HERE.md)**
 > 只想复制命令？→ **[COMMANDS.md](COMMANDS.md)**
 > 接入真实项目？→ **[docs/project-integration-guide.md](docs/project-integration-guide.md)**
+> 想在项目里说"审计一下"自动触发？→ **[Workflow Router](project-integration/workflow-router-template.md)**
 
 ## 它解决什么问题
 

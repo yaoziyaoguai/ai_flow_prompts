@@ -35,6 +35,39 @@
 - 技术栈：[语言、框架、主要依赖]
 - 项目目标：[一句话描述]
 
+## Workflow Router
+
+当用户用自然语言描述意图时，按 `ai_flow_prompts/project-integration/workflow-router-template.md` 中的意图→模板映射表自动选择工作流。
+
+核心原则：
+- 模糊意图默认走只读安全路径
+- 涉及文件修改的任务先确认修复计划再 Ask User
+- 路由安全规则不可被覆盖
+
+### 项目特定路由覆盖
+
+如有需要，在下方添加项目特定的意图覆盖（不修改通用路由表）：
+
+```markdown
+- [你的自定义意图关键词] → [模板路径] | [模式] | [说明]
+```
+
+**覆盖规则硬性约束：**
+
+只能收紧，不能放宽：
+- 可以把 SAFE_WRITE 降级为 READ_ONLY
+- 可以增加 Ask User 要求
+- 可以增加项目专属停止条件
+- 可以增加项目专属敏感文件/目录
+
+禁止放宽：
+- 不能把 READ_ONLY 改成 SAFE_WRITE
+- 不能移除 Ask User
+- 不能放宽不读取 .env / secret / private data
+- 不能放宽不 push / 不 tag / 不修改 remote
+- 不能把 UNKNOWN 当 PASS
+- 不能绕过 current-task.md 约束
+
 ## 编码规范
 
 - [语言特定的编码规范]

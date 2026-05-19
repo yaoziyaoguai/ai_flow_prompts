@@ -1,6 +1,9 @@
 # START_HERE —— 我现在要做什么？
 
-按你的场景选择模板。每个场景指向对应模板和 [COMMANDS.md](COMMANDS.md) 中的可复制命令。
+按你的场景选择模板。有两种使用方式：
+
+- **模式 A：直接复制命令** —— 打开 [COMMANDS.md](COMMANDS.md)，复制对应编号的命令发给 Coding Agent
+- **模式 B：项目内自然语言路由** —— 将 [Workflow Router](project-integration/workflow-router-template.md) 嵌入项目的 AGENTS.md，之后在项目里说"审计一下"/"能提交吗"即可自动路由到正确模板
 
 ---
 

@@ -7,6 +7,7 @@
 - 发布前或重大里程碑前的质量检查
 - 怀疑代码存在系统性问题但不确定在哪
 - 需要第三方视角的客观评估
+- **验证实现 Agent 的 Review Packet / 完成声明是否可信**
 
 ## 不适合场景
 
@@ -25,6 +26,8 @@
 - `coding-agent/architecture-review.md` —— 可组合的架构专项审计模块
 - `snippets/evidence-first.md` —— 每个结论要有证据
 - `snippets/no-env-no-secrets.md` —— 安全边界
+
+> **类型：刚性** —— 本模板规则不可选择性跳过。每个维度必须覆盖，每个结论必须有证据。
 
 ## 完整模板
 
@@ -82,6 +85,18 @@
 - 是否有 CI/CD？
 - 是否有回滚方案？
 
+### 7. 实现声明验证（Agent 自报可信度）
+
+**不要相信实现 Agent 的 Review Packet 或完成声明。直接检查证据。**
+
+- [ ] **Git 状态验证**：`git status --short` — 是否有 pending diff？是否有 staged 但未 commit 的变更？是否有 untracked 文件？
+- [ ] **Diff 与声明一致性**：`git diff --stat` 的变更文件列表是否与 Agent 声称的修改范围一致？是否存在范围外修改（越权修改）？
+- [ ] **Claimed vs Verified**：Agent 声称"已完成"的每一项，是否有对应的 diff / 文件变更 / 测试输出作为证据？未验证的声称标记为 `UNVERIFIED`，不等于 `DONE`
+- [ ] **Skipped / Not Run / UNKNOWN 审查**：Agent 是否跳过了某些检查项？是否标注了 UNKNOWN？UNKNOWN 项是否被当作 PASS？——每项 UNKNOWN 都记录并评估阻塞影响
+- [ ] **测试输出验证**：Agent 声称"测试通过"时，是否提供了测试命令和输出？如果没有，标记为 UNKNOWN——不假设通过
+- [ ] **越权修改检查**：是否修改了 `AGENTS.md` / `CLAUDE.md` / `.gitignore` / 配置文件 / `.env` 文件？是否执行了 push / tag / remote 操作？
+- [ ] **Commit/Push/Tag/Release 权限评估**：当前状态是否适合 commit？是否有人未经授权 push/tag？
+
 ## 输出格式
 
 按以下结构组织审计报告：
@@ -89,19 +104,24 @@
 ### 审计摘要
 - 总体评级：PASS / CONDITIONAL PASS / FAIL
 - 关键发现数量（按严重程度）
-- 是否可以进入下一阶段？
+- **GO / NO-GO / CONDITIONAL GO**：（是否可以进入下一阶段？是否可以 commit？）
+- **本轮操作模式：只读**——未修改任何文件
+- 是否发现 Agent 自报不可信的情况
 
 ### 发现清单（按 CRITICAL → HIGH → MEDIUM → LOW 排列）
 
 对每个发现：
 ```
 [严重程度]
-类别：[代码质量 / 架构 / 测试 / 安全 / 文档 / 构建]
+类别：[代码质量 / 架构 / 测试 / 安全 / 文档 / 构建 / Agent自报验证]
 位置：[文件路径:行号]
 问题：[描述]
+Claimed vs Verified：[Agent 声称了什么 vs 实际证据显示了什么]
 证据：[具体证据]
 建议：[如何修复]
 ```
+
+严重程度定义见 `common/brutal-honesty.md`。Agent 自报验证维度（类别=`Agent自报验证`）的 CRITICAL 发现包括：声称与 diff 矛盾、UNKNOWN 被当 PASS、越权修改。
 
 ### 正面发现
 列出项目中做得好的地方。只说真正做得好的部分，不要为了平衡而编造。
@@ -117,3 +137,5 @@
 - 审计结果可能令人不快——这正是 `brutal-honesty.md` 搭配使用的原因
 - 如果项目很大，可以分模块审计，不要一次审计整个项目
 - 审计报告建议使用 `common/output-format.md` 统一格式
+- **第 7 维度（Agent 自报验证）是本审计的特有维度**——区别于 architecture-review 和 commit-readiness。如审计对象是另一个 Agent 的实现结果，此维度是强制项
+- `Claimed vs Verified` 字段是所有发现的标准字段——不只第 7 维度，所有维度的发现都应注明 Agent 声称与证据是否一致

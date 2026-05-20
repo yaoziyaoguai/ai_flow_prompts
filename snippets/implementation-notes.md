@@ -20,6 +20,13 @@
 - 记录修改的文件和修改内容
 - 保障后续回顾时能理解"为什么当时这样做"
 
+### 边界
+- implementation-notes.md 是 **implementation decision log**，只记录本次实现中已经发生且仍有价值的决策、理由和验证结果
+- 它不是 Project Memory、Task Ledger、长期进度追踪器，也不是下一轮任务的默认事实来源
+- 它不能恢复已经冻结、放弃或被用户排除的路线；新任务仍以当前用户目标、项目规则和 current-task.md 为准
+- 不得记录 secret、真实日志、private data、内部 URL、真实人员信息或公司敏感信息；如需提及，只能使用脱敏摘要、文件名、路径或结论
+- 历史归档只用于回顾已完成任务，不应自动扩大新任务范围
+
 ### 记录格式
 
 ```markdown
@@ -60,4 +67,4 @@
 
 - 这是一个**可嵌入片段**，嵌入位置通常在实现类模板的流程说明之后
 - 确保 `[project-path]` 指向实际的项目路径
-- implementation-notes.md 在任务完成后不删除，归档到 `docs/prompts/history/`
+- implementation-notes.md 在任务完成后不删除；如需归档到 `docs/prompts/history/`，归档内容仍只是已完成任务的决策日志，不是可自动续写的项目记忆

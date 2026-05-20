@@ -17,6 +17,7 @@ Prompt Library 可以通过两种方式集成到项目中：
 - `claude-md-template.md`：Claude Code 的项目级补充规则
 - `current-task-template.md`：本轮任务入口，记录目标、范围和成功标准
 - `project-prompt-entry-template.md`：可选轻量入口，用于新会话时引导 Coding Agent 读取规则和本轮任务
+- `global-agent-rules-template.zh.md` / `.en.md`：可复制到 Claude Code / Codex **全局** `CLAUDE.md` 或 `AGENTS.md` 的通用行为准则模板
 
 一次性任务 prompt 应从 `common/`、`coding-agent/` 和 `snippets/` 组合；项目长期规则才放入 `project-integration/` 生成的文件。
 
@@ -79,7 +80,7 @@ Prompt Library 可以通过两种方式集成到项目中：
   docs/
     prompts/
       current-task.md        # 本轮任务描述
-      history/               # 历史任务记录（可选）
+      history/               # 已完成任务的决策日志归档（可选，不是项目记忆或进度账本）
   ...
 ```
 

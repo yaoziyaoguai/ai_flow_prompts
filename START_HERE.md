@@ -75,6 +75,11 @@ ChatGPT 负责选择模板、填入参数、生成最终 prompt。
 
 ---
 
+## 我想配置全局 Coding Agent 行为规则
+
+→ 模板：[project-integration/global-agent-rules-template.zh.md](project-integration/global-agent-rules-template.zh.md)（中文）或 [.en.md](project-integration/global-agent-rules-template.en.md)（英文）
+复制到 `~/.claude/CLAUDE.md`（Claude Code 全局）或 Codex 全局 `AGENTS.md` 中使用。
+
 ## 不确定用哪个？
 
 → 先用 [common/context-brief.md](common/context-brief.md) 建立上下文

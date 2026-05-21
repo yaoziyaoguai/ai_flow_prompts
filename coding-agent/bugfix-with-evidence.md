@@ -22,8 +22,7 @@
 
 ## 完整模板
 
----
-
+```text
 # Bugfix Protocol —— Evidence First
 
 你接到一个 bug 报告。在动手修改代码之前，按以下流程操作。
@@ -76,8 +75,7 @@
 - 修好后不验证就宣布完成
 - 用 hard-coded bypass、string-matching hack 或临时 filter 隐藏症状
 - 修好后不检查是否有同类问题
-
----
+```
 
 ## 使用提醒
 

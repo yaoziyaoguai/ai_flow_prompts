@@ -24,8 +24,7 @@
 
 ## 完整模板
 
----
-
+~~~text
 # Commit Readiness Checklist
 
 对当前工作区进行本地 commit 前检查。不执行 commit，不 push，不 tag。
@@ -116,8 +115,7 @@ GO / NO-GO / CONDITIONAL GO（满足条件 X 后可 commit）
 - [ ] 本轮未执行 `git push`
 - [ ] 本轮未执行 `git tag`
 - [ ] 本轮未修改 remote
-
----
+~~~
 
 ## 使用提醒
 

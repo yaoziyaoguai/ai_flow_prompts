@@ -24,7 +24,7 @@
 
 ## 完整模板
 
-```markdown
+~~~markdown
 # AGENTS.md
 
 本文件约束所有在此项目中工作的 Coding Agent 的行为。
@@ -112,7 +112,7 @@ Router 只负责选择 workflow，不负责放宽安全规则。可以将 `proje
 ```markdown
 - [自定义意图关键词] → [模板路径] | [模式] | [说明]
 ```
-```
+~~~
 
 ## 使用提醒
 

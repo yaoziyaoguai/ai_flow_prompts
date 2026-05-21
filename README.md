@@ -7,6 +7,20 @@ AI Workflow Prompt Library —— 让 ChatGPT / Claude Code / Codex 更稳定执
 > 接入真实项目？→ **[docs/project-integration-guide.md](docs/project-integration-guide.md)**
 > 想在项目里说"审计一下"自动触发？→ **[Workflow Router](project-integration/workflow-router-template.md)**
 
+## 文件语义速查
+
+| 你要做什么 | 看哪里 |
+|------|------|
+| 配置全局 Claude Code / Codex 行为规则 | `project-integration/global-agent-rules-template.zh.md` / `.en.md` |
+| 给某个项目创建 AGENTS.md / CLAUDE.md | `project-integration/agents-md-template.md` / `project-integration/claude-md-template.md` |
+| 直接复制一条短命令 | `COMMANDS.md` |
+| 学习完整示例 | `examples/` |
+| 阅读设计说明和使用指南 | `docs/` |
+| 查看本仓库维护者本地 Agent 规则 | 根目录 `AGENTS.md` / `CLAUDE.md`，已被 `.gitignore` 忽略，不作为仓库分发内容 |
+
+`templates` 是可复制/可执行的模板；`examples` 是学习样例，不是规则源。
+用户不要复制根目录 `AGENTS.md` / `CLAUDE.md`；全局规则用 `project-integration/global-agent-rules-template.zh.md` / `.en.md`，项目级规则用 `project-integration/agents-md-template.md` / `project-integration/claude-md-template.md`。
+
 ## 它解决什么问题
 
 - 不想每次从零写 prompt

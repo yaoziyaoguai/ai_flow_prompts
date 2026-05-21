@@ -16,8 +16,7 @@
 
 ## 组装后的完整 prompt
 
----
-
+```text
 # SDD Implementation —— 用户认证模块
 
 ## Context Brief
@@ -68,8 +67,7 @@
 ## Implementation Notes
 
 在 `docs/prompts/implementation-notes.md` 中记录全过程。
-
----
+```
 
 ## 使用说明
 

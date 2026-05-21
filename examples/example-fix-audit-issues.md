@@ -16,8 +16,7 @@
 
 ## 组装后的完整 prompt
 
----
-
+```text
 # 修复审计问题 —— Round 1
 
 ## Scope Lock
@@ -66,8 +65,7 @@
 - 修复摘要（FIXED / WON'T FIX / NEEDS DISCUSSION）
 - 每个修复的详细记录
 - 修改文件清单
-
----
+```
 
 ## 使用说明
 

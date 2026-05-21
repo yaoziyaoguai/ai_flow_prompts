@@ -1,5 +1,7 @@
 # CLAUDE.md 模板（项目级）
 
+定位说明：这是目标项目级 `CLAUDE.md` 模板，用于复制到某个具体项目根目录并补充 Claude Code 特定规则。它不是全局规则模板，也不是 `ai_flow_prompts` 仓库自用规则；项目级 CLAUDE.md 应补充项目上下文、构建/测试/lint 命令、目录结构、安全边界、`current-task.md` 和 workflow-router 关系。项目规则可以收紧全局规则，但不能放宽最低安全边界。
+
 ## 适用场景
 
 - 项目中需要使用 Claude Code，需要项目级的行为规则

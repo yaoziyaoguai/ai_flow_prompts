@@ -1,5 +1,7 @@
 # Global Coding Agent Rules Template
 
+Positioning: this is a global Claude Code / Codex behavior rules template that can be copied into the user's own global `CLAUDE.md` / `AGENTS.md`. It is not a project-level template and not the repository-local rules for `ai_flow_prompts`; for project-level rules, use `project-integration/agents-md-template.md` or `project-integration/claude-md-template.md`. Do not include secrets, internal URLs, real private data, or sensitive company information.
+
 ## When to Use
 
 - You need a cross-project behavior baseline for Claude Code / Codex.

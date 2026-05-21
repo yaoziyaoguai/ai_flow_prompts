@@ -1,5 +1,7 @@
 # Global Coding Agent Rules Template
 
+定位说明：这是全局 Claude Code / Codex 行为准则模板，可复制到用户自己的全局 `CLAUDE.md` / `AGENTS.md`。它不是项目级模板，也不是 `ai_flow_prompts` 仓库自用规则；项目级规则请使用 `project-integration/agents-md-template.md` 或 `project-integration/claude-md-template.md`。不要写入 secret、内部 URL、真实私人资料或公司敏感信息。
+
 ## 适用场景 / When to Use
 
 - 需要为 Claude Code / Codex 配置跨项目通用行为基线

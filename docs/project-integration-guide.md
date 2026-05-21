@@ -13,7 +13,6 @@ Prompt Library 可以通过两种方式集成到项目中：
 
 `project-integration/` 不是“直接发给 Coding Agent 的任务 prompt”分类。它用于生成真实项目中的常驻规则文件和本轮任务入口：
 
-- `ai_flow_prompts` 维护者可以在本地使用被 `.gitignore` 忽略的根目录 `AGENTS.md` / `CLAUDE.md`，但这些不是用户模板
 - `agents-md-template.md`：项目长期规则，面向所有 Coding Agent
 - `claude-md-template.md`：Claude Code 的项目级补充规则
 - `current-task-template.md`：本轮任务入口，记录目标、范围和成功标准
@@ -90,7 +89,7 @@ Prompt Library 可以通过两种方式集成到项目中：
 - 不要将 ai_flow_prompts 作为 submodule 引入项目
 - 不要将 ai_flow_prompts 的模板全量复制到项目中
 - 只在需要时，从 ai_flow_prompts 选择相关模板，复制到项目或通过 ChatGPT 动态引用
-- 项目中的 AGENTS.md 是**实例**，`project-integration/` 中的是**模板**，维护者本地的根目录 AGENTS.md / CLAUDE.md 是本仓库自用规则且不作为仓库内容分发——三者独立维护
+- 项目中的 AGENTS.md 是**实例**，`project-integration/` 中的是**模板**——两者独立维护
 
 ## 常见问题
 

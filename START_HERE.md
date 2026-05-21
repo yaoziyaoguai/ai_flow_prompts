@@ -5,7 +5,7 @@
 - **模式 A：直接复制命令** —— 打开 [COMMANDS.md](COMMANDS.md)，复制对应编号的命令发给 Coding Agent
 - **模式 B：项目内自然语言路由** —— 将 [Workflow Router](project-integration/workflow-router-template.md) 嵌入项目的 AGENTS.md，之后在项目里说"审计一下"/"能提交吗"即可自动路由到正确模板
 
-先分清文件类型：本仓库不分发根目录 `AGENTS.md` / `CLAUDE.md` 作为用户模板；维护者可在本地使用被 `.gitignore` 忽略的同名文件。全局规则模板在 `project-integration/global-agent-rules-template.*`，项目级规则模板在 `project-integration/agents-md-template.md` / `project-integration/claude-md-template.md`；`examples/` 只是学习样例，不是规则源；`docs/` 是说明文档，不是执行模板。
+先分清文件类型：`coding-agent/`、`common/`、`snippets/`、`project-integration/` 中的文件是可复制/可执行的模板；`examples/` 是学习样例，不是规则源；`docs/` 是说明文档，不是执行模板。全局规则模板在 `project-integration/global-agent-rules-template.*`，项目级规则模板在 `project-integration/agents-md-template.md` / `project-integration/claude-md-template.md`。
 
 ---
 
@@ -86,7 +86,7 @@ ChatGPT 负责选择模板、填入参数、生成最终 prompt。
 
 → 项目级 AGENTS.md 模板：[project-integration/agents-md-template.md](project-integration/agents-md-template.md)
 → 项目级 CLAUDE.md 模板：[project-integration/claude-md-template.md](project-integration/claude-md-template.md)
-这些模板复制到目标项目根目录使用；本仓库根目录的 `AGENTS.md` / `CLAUDE.md` 是维护者本地规则，不作为仓库模板分发。
+这些模板复制到目标项目根目录使用。
 
 ## 不确定用哪个？
 

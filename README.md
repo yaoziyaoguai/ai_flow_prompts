@@ -16,10 +16,8 @@ AI Workflow Prompt Library —— 让 ChatGPT / Claude Code / Codex 更稳定执
 | 直接复制一条短命令 | `COMMANDS.md` |
 | 学习完整示例 | `examples/` |
 | 阅读设计说明和使用指南 | `docs/` |
-| 查看本仓库维护者本地 Agent 规则 | 根目录 `AGENTS.md` / `CLAUDE.md`，已被 `.gitignore` 忽略，不作为仓库分发内容 |
 
-`templates` 是可复制/可执行的模板；`examples` 是学习样例，不是规则源。
-用户不要复制根目录 `AGENTS.md` / `CLAUDE.md`；全局规则用 `project-integration/global-agent-rules-template.zh.md` / `.en.md`，项目级规则用 `project-integration/agents-md-template.md` / `project-integration/claude-md-template.md`。
+`coding-agent/`、`common/`、`snippets/`、`project-integration/` 中的文件是可复制/可执行的模板；`examples/` 是学习样例，不是规则源；`docs/` 是说明文档，不是执行模板。
 
 ## 它解决什么问题
 
